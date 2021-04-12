@@ -1,6 +1,15 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "victorcmarinho.dev",
+  "name": "Victor Carvalho Marinho",
+  "shortcuts": [
+    {
+      "name": "victorcmarinho.dev",
+      "short_name": "victorcmarinho.dev",
+      "description": "victorcmarinho.dev",
+      "url": "/",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    }
+  ],
   "icons": [
     {
       "src": "favicon.ico",
@@ -16,10 +25,20 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "maskable_icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "maskable" 
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#151515",
+  "background_color": "#151515",
+  "manifestUrl": "https://victorcmarinho.app/manifest.json",
+  "lang": "pt-br",
+  "description": "Oi meu nome é Victor Carvalho Marinho sou desenvolvedor front end web e mobile apaixonado por React, Angular, React Native e atualmente desenvolvendo com Flutter",
+  "orientation": "portrait"
 }

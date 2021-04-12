@@ -11,6 +11,15 @@ export const Container = styled.footer`
     margin-right: 32px;
     border-radius: 100%;
   }
+
+  @media (max-width: 483px) {
+    flex-direction: column;
+    place-items: center;
+    img {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+  }
 `;
 
 export const ListLink = styled.ul`
@@ -36,5 +45,8 @@ export const ListLink = styled.ul`
         margin-right: 16px;
       }
     }
+  }
+
+  @media (max-width: 483px) {
   }
 `;

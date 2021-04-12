@@ -14,14 +14,22 @@ export const Footer: React.FC<IFooter> = memo(({ img }) => (
     <img src={img} alt="Imagem de perfil do Victor Marinho" />
     <S.ListLink>
       <li>
-        <a href="https://github.com/victorcmarinho" rel="external">
-          <GitHub width="25px" height="25px" />
+        <a
+          href="https://github.com/victorcmarinho"
+          rel="external noreferrer"
+          target="_blank"
+        >
+          <GitHub width="2.5rem" height="2.5rem" />
           Github
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/victorcmarinho/" rel="external">
-          <Linkedin width="25px" height="25px" />
+        <a
+          href="https://www.linkedin.com/in/victorcmarinho/"
+          rel="external noreferrer"
+          target="_blank"
+        >
+          <Linkedin width="2.5rem" height="2.5rem" />
           Linkedin
         </a>
       </li>

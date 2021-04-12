@@ -10,6 +10,10 @@ export const Container = styled.div`
 
   width: 100%;
   max-width: 1232px;
+
+  @media (max-width: 990px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftSide = styled.div`
@@ -25,6 +29,13 @@ export const LeftSide = styled.div`
   p {
     margin-top: 32px;
   }
+
+  @media (max-width: 990px) {
+    max-width: 100%;
+    margin-bottom: 64px;
+    position: initial;
+    top: initial;
+  }
 `;
 
 export const RightSide = styled.div`
@@ -32,4 +43,8 @@ export const RightSide = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 990px) {
+    max-width: 100%;
+  }
 `;

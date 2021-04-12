@@ -29,7 +29,7 @@ const Home: React.FC = () => {
             title={repos.node.name}
             labels={repos.node.languages.edges
               .map(label => label.node.name)
-              .join(',')}
+              .join(', ')}
             stars={+repos.node.stargazerCount}
             text={repos.node.description}
             url={repos.node.url}

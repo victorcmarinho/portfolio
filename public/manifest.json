@@ -1,6 +1,7 @@
 {
   "short_name": "victorcmarinho.dev",
   "name": "Victor Carvalho Marinho",
+  "categories": ["social"],
   "shortcuts": [
     {
       "name": "victorcmarinho.dev",
@@ -13,7 +14,7 @@
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "70x70",
       "type": "image/x-icon"
     },
     {
@@ -28,7 +29,7 @@
     },
     {
       "src": "maskable_icon.png",
-      "sizes": "196x196",
+      "sizes": "96x96",
       "type": "image/png",
       "purpose": "maskable" 
     }

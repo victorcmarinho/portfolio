@@ -1,34 +1,43 @@
 import React from 'react';
 
-import { Proxy } from 'components/Proxy';
-import { useTheme } from 'hooks/ThemeContext';
+import { useQuery } from '@apollo/client';
+import { Card } from 'components/Card';
+import { Footer } from 'components/Footer';
+import { Text } from 'components/Text';
+import { Title } from 'components/Title';
+import { IGitInfos } from 'models/gitInfosModel';
+import { GET_GIT_INFOS } from 'services/queryGitHub';
 
-import { Container, Header } from './styles';
+import * as S from './styles';
 
 const Home: React.FC = () => {
-  const {
-    toggle,
-    themeState: { mode },
-  } = useTheme();
+  const { data } = useQuery<IGitInfos>(GET_GIT_INFOS);
+
   return (
-    <Container>
-      <Header>
-        <input
-          data-testid="input"
-          type="checkbox"
-          onClick={() => toggle()}
-          defaultValue={mode}
-          alt={mode}
-        />
-        {mode}
-      </Header>
-      <h1>Reference Architecture - ReactJS</h1>
-      <p>A ReactJS + TypeScript structure.</p>
-
-      <h1>BFF - Proxy</h1>
-
-      <Proxy />
-    </Container>
+    <S.Container>
+      <S.LeftSide>
+        <section>
+          <Title>Oi, Eu sou Victor Marinho.</Title>
+          <Text>{data?.user.bio}</Text>
+        </section>
+        <Footer img={data?.user.avatarUrl} />
+      </S.LeftSide>
+      <S.RightSide>
+        {data?.user.repositories.edges.map((repos, i) => (
+          <Card
+            key={repos.node.name + i}
+            title={repos.node.name}
+            labels={repos.node.languages.edges
+              .map(label => label.node.name)
+              .join(',')}
+            stars={+repos.node.stargazerCount}
+            text={repos.node.description}
+            url={repos.node.url}
+          />
+        ))}
+        <Text>Veja mais em meu github</Text>
+      </S.RightSide>
+    </S.Container>
   );
 };
 

@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
 import Lottie, { Options } from 'react-lottie';
 
-import reactAtomic from 'assets/json/react-atomic.json';
+import reactAtomic from 'assets/json/loading.json';
 
 import { Container } from './styles';
 
 const Loading: React.FC = () => {
   const defaultOptions: Options = {
-    loop: true,
+    loop: false,
     autoplay: true,
     animationData: reactAtomic,
   };

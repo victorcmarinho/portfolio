@@ -19,7 +19,7 @@ interface ISplashProvider {
 
 const SplashContext = createContext({} as ISplashContext);
 
-export const DEFAULT_LOADING_WAIT_TIME = 500;
+export const DEFAULT_LOADING_WAIT_TIME = 4000;
 
 export const SplashProvider: FC<ISplashProvider> = ({
   SplashScreen,

@@ -10,8 +10,5 @@ module.exports = {
   ],
   babel: async (options) => ({
     ...options,
-    plugins: [...options.plugins, ['babel-plugin-root-import', {
-      rootPathSuffix: 'src',
-    }]]
   }),
 }

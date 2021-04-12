@@ -1,29 +1,31 @@
-import { lighten } from 'polished';
 import theme from 'styled-theming';
 
+const bgOpacity = 1;
+const textOpacity = 1;
+
 const backgroundColor = theme('mode', {
-  light: '#fafafa',
-  dark: '#222',
+  light: `rgba(21,21,21, ${bgOpacity})`,
+  dark: `rgba(21,21,21, ${bgOpacity})`,
 });
 
 const textColorPrimary = theme('mode', {
-  light: '#050505',
+  light: '#fff',
   dark: '#fff',
 });
 
 const textColorSecundary = theme('mode', {
-  light: '#fff',
-  dark: '#050505',
+  light: `rgba(148,148,149, ${textOpacity})`,
+  dark: `rgba(148,148,149, ${textOpacity})`,
 });
 
 const buttonBackgroundColor = theme('mode', {
-  light: lighten(0.2, '#5B3E96'),
-  dark: '#5B3E96',
+  light: `rgba(32,32,34, ${bgOpacity})`,
+  dark: `rgba(32,32,34, ${bgOpacity})`,
 });
 
 const buttonTextColor = theme('mode', {
-  light: '#eee',
-  dark: '#eee',
+  light: '#fff',
+  dark: '#fff',
 });
 
 export default {
@@ -33,8 +35,9 @@ export default {
   buttonBackgroundColor,
   buttonTextColor,
   fontSize: {
-    large: '5.4rem',
-    medium: '2.5rem',
-    small: '1.5rem',
+    large: '4.8rem',
+    medium: '2.4rem',
+    small: '1.4rem',
+    xsmall: '1.0rem',
   },
 } as const;

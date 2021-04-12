@@ -1,30 +1,35 @@
 import styled from 'styled-components';
-import theme from 'styles/theme';
 
 export const Container = styled.div`
-  width: 100vw;
-  min-height: 100vh;
+  margin: auto;
+  padding: 32px;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 1232px;
+`;
+
+export const LeftSide = styled.div`
+  max-width: 408px;
+  max-height: calc(100vh - 32px - 32px);
+  display: flex;
   flex-direction: column;
-  h1 {
-    font-size: ${theme.fontSize.large};
-    color: ${theme.textColorPrimary};
-    margin-top: 4rem;
-  }
+  justify-content: space-between;
+
+  position: sticky;
+  top: 32px;
+
   p {
-    margin-top: 24px;
-    font-size: ${theme.fontSize.medium};
-    line-height: 32px;
+    margin-top: 32px;
   }
 `;
 
-export const Header = styled.header`
-  input {
-    margin-right: 10px;
-  }
-
-  text-transform: capitalize;
-  font-size: ${theme.fontSize.small};
+export const RightSide = styled.div`
+  max-width: 675px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;

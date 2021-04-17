@@ -1,8 +1,8 @@
 # React Reference Architecture
-[![Check Code](https://github.com/victorcmarinho/arch-ref/actions/workflows/checkcode.yml/badge.svg)](https://github.com/victorcmarinho/arch-ref/actions/workflows/checkcode.yml)
+[![Check Code](https://github.com/victorcmarinho/portfolio/actions/workflows/checkcode.yml/badge.svg)](https://github.com/victorcmarinho/portfolio/actions/workflows/checkcode.yml)
 
 ### Preview
-![preview image]![preview image](https://github.com/victorcmarinho/portfolio/blob/main/images/preview.png)
+![preview image]![preview image](https://raw.githubusercontent.com/victorcmarinho/portfolio/main/images/preview.gif)
 ## BFF - Proxy Configurate
 
 Often serve the front-end React app from the same host and port as their backend implementation.

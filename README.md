@@ -2,7 +2,7 @@
 [![Check Code](https://github.com/victorcmarinho/portfolio/actions/workflows/checkcode.yml/badge.svg)](https://github.com/victorcmarinho/portfolio/actions/workflows/checkcode.yml)
 
 ### Preview
-![preview image]![preview image](https://raw.githubusercontent.com/victorcmarinho/portfolio/main/images/preview.gif)
+![preview image]![preview image](https://raw.githubusercontent.com/victorcmarinho/portfolio/main/image/preview.png)
 ## BFF - Proxy Configurate
 
 Often serve the front-end React app from the same host and port as their backend implementation.

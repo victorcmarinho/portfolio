@@ -1,8 +1,10 @@
 # React Reference Architecture
 [![Check Code](https://github.com/victorcmarinho/portfolio/actions/workflows/checkcode.yml/badge.svg)](https://github.com/victorcmarinho/portfolio/actions/workflows/checkcode.yml)
+[![CodeQL](https://github.com/victorcmarinho/portfolio/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/victorcmarinho/portfolio/actions/workflows/codeql-analysis.yml)
 
 ### Preview
 ![preview image]![preview image](https://raw.githubusercontent.com/victorcmarinho/portfolio/main/image/preview.png)
+
 ## BFF - Proxy Configurate
 
 Often serve the front-end React app from the same host and port as their backend implementation.
@@ -79,15 +81,23 @@ Storybook is a development environment for React UI components. It allows you to
 src
 |-- assets
 |-- components
+|-- config // all aplications configs, external services and interceptores
 |-- hooks
 |-- mocks
 |-- models
 |-- pages
 |-- routes
+|-- services // all query and functions request 
 |-- utils
 |-- Bootstrap.tsx
 |-- App.tsx
 |-- index.tsx
+|-- react-app-env.d.ts
+|-- reportWebVitals.ts
+|-- service-worker.ts
+|-- serviceWorkerRegistration.ts
+|-- setupProxy.js
+|-- setupTests.ts
 ...
 ```
 
@@ -102,7 +112,48 @@ components
     |-- YourComponent.spec.ts
     |-- YourComponent.stories.ts
 ...
+
+or
+
+...
+components
+|-- YourComponent
+    |-- index.tsx
+    |-- styles.ts
+    |-- interfaces.ts
+    |-- YourComponent.ts
+    |-- YourComponent.spec.ts
+    |-- YourComponent.stories.ts
+...
+
+or
+
+...
+components
+|-- YourContainerComponents
+    |-- Component1
+    |-- Component2
+    |-- Component3
+    |-- index.ts
+...
+
+
 ```
+
+**This is your page structure:**
+
+```
+...
+Pages
+|-- YourPage
+    |-- index.tsx
+    |-- styles.ts
+    |-- interface.ts 
+    |-- YourPage.spec.ts
+    |-- YourPage.stories.ts
+...
+```
+
 
 `./assets`
 
@@ -112,6 +163,22 @@ Here will be all your project assets as images, icons...
 
 Components are presentational only elements, grouping UI items
 
+`./configs`
+
+Here will be all configurations for external and internal services
+
+`./hooks`
+
+Services are responsible to handle the connection with all external elements, like APIs and global functions
+
+`./mocks`
+
+All mock data for your unit testes, examples and any mocks
+
+`./models`
+
+global interfaces and models that your project needs
+
 `./pages`
 
 Pages are mapped in routes and have all the containers needed to implement a functionality
@@ -120,21 +187,57 @@ Pages are mapped in routes and have all the containers needed to implement a fun
 
 Routes contains the `react-router-dom` implementation to map the project's routes to the respective pages
 
-`./hooks`
+`./services`
 
-Services are responsible to handle the connection with all external elements, like APIs and global functions
+Here will be all query and request funcions
 
-`./mocks`
+`./styles`
 
-All mock data for your unit testes
-
-`./models`
-
-global interfaces and models that your project needs
+Here will be all global and css(relatives)
 
 `./utils`
 
 Directory to keep all utils functions to share all over the project
+
+## Enviroments
+
+Your project can consume variables declared in your environment as if they were declared locally in your JS files. By default you will have NODE_ENV defined for you, and any other environment variables starting with ``REACT_APP_.``
+
+
+> WARNING: Do not store any secrets (such as private API keys) in your React app!
+> Environment variables are embedded into the build, meaning anyone can view them by inspecting your app's files.
+> Create .env.test.local and .env.local before run project
+
+**Adding Development Environment Variables In**
+
+To define permanent environment variables, create a file called .env in the root of your project:
+
+``REACT_APP_NOT_SECRET_CODE=abcdef```
+
+**What other files can be used**
+
+- ``.env``: Default.
+- ``.env.local``: Local overrides. This file is loaded for all environments except test.
+- ``.env.development``, , : Environment-specific settings..env.test.env.production
+- ``.env.development.local``, , : Local overrides of environment-specific settings..env.test.local.env.production.local
+
+Files on the left have more priority than files on the right:
+
+- ``npm start``: , , , ``.env.development.local`` ``.env.local`` ``.env.development`` ``.env``
+- ``npm run build``: , , , ``.env.production.local`` ``.env.local`` ``.env.production`` ``.env``
+- ``npm test``: , , (note is missing) ``.env.test.local `` ``.env.test.env`` ``.env.local``
+
+**Example**
+
+```
+REACT_APP_VERSION=$npm_package_version
+# also works:
+# REACT_APP_VERSION=${npm_package_version}
+
+DOMAIN=www.example.com
+REACT_APP_FOO=$DOMAIN/foo
+REACT_APP_BAR=$DOMAIN/bar
+```
 
 ### More utils commands
 
@@ -165,6 +268,8 @@ The project is already configured with:
 - Styled Theming
 - Husky
 - Storybook
+- PWA
+- Integration back-end proxy (http-proxy)
 
 # Getting Started with Create React App
 
@@ -218,8 +323,10 @@ You can learn more web develop tools [web.dev](https://web.dev/)
 
 ### Main dependecies
 
+- [@apollo/client](https://www.npmjs.com/package/@apollo/client)
 - [axios](https://www.npmjs.com/package/axios)
 - [date-fns](https://date-fns.org/)
+- [graphql](https://www.npmjs.com/package/graphql)
 - [lodash](https://lodash.com/)
 - [polished](https://www.npmjs.com/package/polished)
 - [react](https://reactjs.org/)
@@ -228,6 +335,7 @@ You can learn more web develop tools [web.dev](https://web.dev/)
 - [react-lottie](https://www.npmjs.com/package/react-lottie) more: https://lottiefiles.com/
 - [react-router-dom](https://reactrouter.com/web/guides/quick-start)
 - [styled-components](https://styled-components.com/)
+- [workbox](https://create-react-app.dev/docs/making-a-progressive-web-app)
 
 ### Main dev dependecies
 

@@ -3,10 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { ApolloProvider } from '@apollo/client';
 import Loading from 'components/Loading/Loading';
+import { client } from 'configs';
 import { SplashProvider } from 'hooks/LoadingContext';
 import { MyThemeProvider } from 'hooks/ThemeContext';
 import Routes from 'routers';
-import { client } from 'server';
 import GlobalStyles from 'styles/global';
 const Bootstrap: React.FC = () => {
   return (

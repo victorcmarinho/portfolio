@@ -18,12 +18,12 @@ const Home: React.FC = () => {
       <S.LeftSide>
         <section>
           <Title>Oi, Eu sou Victor Marinho.</Title>
-          <Text>{data?.user.bio}</Text>
+          <Text>{data?.viewer.name}</Text>
         </section>
-        <Footer img={data?.user.avatarUrl} />
+        <Footer img={data?.viewer.avatarUrl} />
       </S.LeftSide>
       <S.RightSide>
-        {data?.user.repositories.edges.map((repos, i) => (
+        {data?.viewer.repositories.edges.map((repos, i) => (
           <Card
             key={repos.node.name + i}
             title={repos.node.name}

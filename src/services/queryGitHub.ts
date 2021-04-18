@@ -1,14 +1,14 @@
 import { gql } from '@apollo/client';
 
 export const GET_GIT_INFOS = gql`
-  query GetGitInfos {
-    user(login: "victorcmarinho") {
+  {
+    viewer {
       avatarUrl
       bio
       email
       name
       repositories(
-        orderBy: { field: STARGAZERS, direction: DESC }
+        orderBy: { field: UPDATED_AT, direction: DESC }
         last: 100
         affiliations: OWNER
       ) {

@@ -1,8 +1,8 @@
 export interface IGitInfos {
-  user: User;
+  viewer: Viewer;
 }
 
-export interface User {
+export interface Viewer {
   avatarUrl: string;
   bio: string;
   email: string;

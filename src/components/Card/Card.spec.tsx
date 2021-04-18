@@ -2,11 +2,12 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 
-import { GitHub } from './index';
+import { Card } from '.';
+import { props } from '../../mocks/CardMock';
 
-describe('<GitHub/>', () => {
+describe('<Card/>', () => {
   it('should render', () => {
-    const component = render(<GitHub />);
+    const component = render(<Card {...props} />);
     expect(component).toBeTruthy();
   });
 });

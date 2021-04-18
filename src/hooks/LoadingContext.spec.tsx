@@ -49,8 +49,15 @@ describe('LoadingContext Hook', () => {
       result.current.setSplashScreenShowing(true);
       expect(result.current.isSplashScreenShowing).toBeTruthy();
     });
+    jest.setTimeout(1);
+    try {
+      await waitForNextUpdate({ timeout: 4000 });
+    } catch {
+      return;
+    }
 
-    await waitForNextUpdate();
     expect(result.current.isSplashScreenShowing).toBeFalsy();
+
+    jest.clearAllTimers();
   });
 });

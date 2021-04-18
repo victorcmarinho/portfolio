@@ -12,7 +12,6 @@ import * as S from './styles';
 
 const Home: React.FC = () => {
   const { data } = useQuery<IGitInfos>(GET_GIT_INFOS);
-  console.log(data);
 
   return (
     <S.Container>

@@ -18,7 +18,7 @@ const Home: React.FC = () => {
       <S.LeftSide>
         <section>
           <Title>Oi, Eu sou Victor Marinho.</Title>
-          <Text>{data?.viewer.name}</Text>
+          <Text>{data?.viewer.bio}</Text>
         </section>
         <Footer img={data?.viewer.avatarUrl} />
       </S.LeftSide>

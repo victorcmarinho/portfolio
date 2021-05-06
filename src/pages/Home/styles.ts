@@ -32,7 +32,7 @@ export const LeftSide = styled.div`
 
   @media (max-width: 990px) {
     max-width: 100%;
-    margin-bottom: 64px;
+    margin-bottom: 10px;
     position: initial;
     top: initial;
   }

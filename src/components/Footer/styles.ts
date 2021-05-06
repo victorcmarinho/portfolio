@@ -18,6 +18,7 @@ export const Container = styled.footer`
   }
 
   @media (max-width: 483px) {
+    margin-top: 16px;
     flex-direction: column;
     place-items: center;
     img {
@@ -28,12 +29,16 @@ export const Container = styled.footer`
 `;
 
 export const ListLink = styled.ul`
-  display: flex;
+  display: grid;
+  column-gap: 16px;
+  row-gap: 16px;
+  margin-top: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 140px));
+  width: 100%;
+  place-items: center;
+  place-content: center;
 
   li {
-    margin-left: 16px;
-    margin-right: 16px;
-
     list-style: none;
     padding: 0;
 
@@ -50,8 +55,5 @@ export const ListLink = styled.ul`
         margin-right: 16px;
       }
     }
-  }
-
-  @media (max-width: 483px) {
   }
 `;

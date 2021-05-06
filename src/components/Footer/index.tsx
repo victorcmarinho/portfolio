@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 
+import { Curriculo } from 'components/Curriculo';
 import { GitHub } from 'components/GitHub';
 import { Linkedin } from 'components/Linkedin';
 
@@ -25,12 +26,22 @@ export const Footer: React.FC<IFooter> = memo(({ img }) => (
       </li>
       <li>
         <a
-          href="https://www.linkedin.com/in/victorcmarinho/"
+          href="https://www.linkedin.com/in/victorcmarinho"
           rel="external noreferrer"
           target="_blank"
         >
           <Linkedin width="2.5rem" height="2.5rem" />
           Linkedin
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://resume.io/r/Hbcq2CKgR"
+          rel="external noreferrer"
+          target="_blank"
+        >
+          <Curriculo width="2.5rem" height="2.5rem" />
+          Currículo
         </a>
       </li>
     </S.ListLink>

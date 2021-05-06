@@ -5,11 +5,16 @@ export const Container = styled.footer`
   margin-top: 72px;
   display: flex;
 
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+
   img {
     width: 4.8rem;
     height: 4.8rem;
-    margin-right: 32px;
     border-radius: 100%;
+    margin-bottom: 32px;
   }
 
   @media (max-width: 483px) {

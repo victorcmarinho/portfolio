@@ -17,7 +17,7 @@ export const Container = styled.div`
 `;
 
 export const LeftSide = styled.div`
-  max-width: 408px;
+  max-width: 490px;
   max-height: calc(100vh - 32px - 32px);
   display: flex;
   flex-direction: column;
